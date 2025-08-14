@@ -20,11 +20,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: Install dependencies
-        run: npm install --no-frozen-lockfile
-      - name: Build lib
-        run: npm run build
-      - name: Build lib
-        run: npm run build
+        run:  npm install -g pnpm
+      - run: pnpm install
+          - name: Build lib
+      - run: pnpm run build --if-present
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.MODEL_SMAL_WEBISTE_TOKEN }}
