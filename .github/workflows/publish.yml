@@ -22,7 +22,6 @@ jobs:
       - name: Install dependencies
         run:  npm install -g pnpm
       - run: pnpm install
-      - name: Build lib
       - run: pnpm run build --if-present
       - uses: JS-DevTools/npm-publish@v3
         with:
