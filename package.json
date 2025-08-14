@@ -1,7 +1,7 @@
 {
   "name": "@vol_c/module-small-website",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
