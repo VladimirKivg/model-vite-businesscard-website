@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run:  npm install -g pnpm
       - run: pnpm install
-      - run: pnpm run build --if-present
+      - run: pnpm run build
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.MODEL_SMAL_WEBISTE_TOKEN }}
