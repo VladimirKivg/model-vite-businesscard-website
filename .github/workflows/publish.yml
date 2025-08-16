@@ -18,9 +18,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          cache: 'npm'
       - name: Install dependencies
-        run: pnpm install
+        run: npm install pnpm
       - name: Build lib
         run: pnpm run build
       - name: Build lib
