@@ -19,7 +19,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm-publish
+      - run: npm install pnpm
+      - run: pnpm publish
         with:
           token: ${{ secrets.MODEL_SMAL_WEBISTE_TOKEN }}
           access: 'public'
+
