@@ -1,3 +1,1 @@
-this experiment is working, all think in .gitHub folder correct.
-bat for ui-kit u should use differ commands in .github folder
-you have video about this
+

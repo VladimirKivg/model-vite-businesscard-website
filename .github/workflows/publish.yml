@@ -2,7 +2,7 @@ name: Publish to NPM
 on:
   push:
     branches:
-      - ylm-experiment
+      - ylm-experiment-2
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,18 +11,8 @@ jobs:
         node-version: [22]
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - name: Install dependencies
-        run:  npm install -g pnpm
-      - run: pnpm install
-      - run: pnpm run build
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.MODEL_SMAL_WEBISTE_TOKEN }}
