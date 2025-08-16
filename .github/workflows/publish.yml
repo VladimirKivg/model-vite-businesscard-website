@@ -14,8 +14,17 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8
-
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
         run: pnpm install
+      - name: Build lib
+        run: pnpm run build
+      - name: Build lib
+        run: pnpm run build
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.MODEL_SMAL_WEBISTE_TOKEN }}
