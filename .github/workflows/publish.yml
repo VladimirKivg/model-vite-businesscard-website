@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [22
+        node-version: [20]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -19,12 +19,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - name: Install dependencies
-        run: npm install pnpm
-      - name: Build lib
-        run: pnpm run build
-      - name: Build lib
-        run: pnpm run build
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.MODEL_SMAL_WEBISTE_TOKEN }}
